@@ -9,9 +9,9 @@ public class PlayerControl : MonoBehaviour
 
     //public InputActions actions;
 
-    [SerializeField] private InputActionAsset actions;
-    [SerializeField] private float speed = 1f;
-    [SerializeField] private float jumpForce = 50f;
+    private InputActionAsset actions;
+    private float speed = 1f;
+    private float jumpForce = 50f;
 
     private Vector3 startPosition;
 
@@ -20,9 +20,13 @@ public class PlayerControl : MonoBehaviour
 
     private bool canJump = true;
 
-    void Awake()
+    public void Initialize(InputActionAsset actions, float speed, float jumpForce)
     {
-        xAxis = actions.FindActionMap("CubeActionsMap").FindAction("XAxis");
+        this.actions = actions;
+        this.speed = speed;
+        this.jumpForce = jumpForce;
+
+        xAxis = this.actions.FindActionMap("CubeActionsMap").FindAction("XAxis");
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
     }
@@ -39,8 +43,9 @@ public class PlayerControl : MonoBehaviour
         actions.FindActionMap("CubeActionsMap").FindAction("Jump").performed -= OnJump;
     }
 
-    void Update()
+    public void Process()
     {
+
         MoveX();
         MoveZ();
 
@@ -95,6 +100,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("test");
         if (other.CompareTag("Goal"))
         {
             enabled = false;

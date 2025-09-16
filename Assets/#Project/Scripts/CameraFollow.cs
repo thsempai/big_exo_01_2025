@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private PlayerControl player;
-    [SerializeField] private float decal = -3;
-    [SerializeField] private float speed = 10;
+    private PlayerControl player;
+    private float decal = -3;
+    private float speed = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Initialize(PlayerControl player, float decal, float speed)
     {
-        if (player == null)
-        {
-            player = FindFirstObjectByType<PlayerControl>();
-        }
+        this.player = player;
+        this.speed = speed;
+        this.decal = decal;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Process()
     {
 
         Vector3 goalPosition = transform.position;
