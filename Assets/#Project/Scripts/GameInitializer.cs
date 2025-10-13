@@ -3,16 +3,18 @@ using UnityEngine.InputSystem;
 
 public class GameInitializer : MonoBehaviour
 {
+
+    [Header("Game Data")]
+    [SerializeField] private GameData gameData;
+
+    [Space]
     [Header("Player")]
     [SerializeField] PlayerControl player;
     [SerializeField] private InputActionAsset actions;
-    [SerializeField] private float speed = 1f;
-    [SerializeField] private float jumpForce = 50f;
 
     [Space]
     [Header("Camera")]
     [SerializeField] CameraFollow cam;
-    [SerializeField] private float decal = -3;
 
     [Space]
     [Header("Game Manager")]
@@ -34,10 +36,10 @@ public class GameInitializer : MonoBehaviour
 
     private void Initialize()
     {
-        player.Initialize(actions, speed, jumpForce);
+        player.Initialize(actions, gameData.Player.Speed, gameData.Player.JumpForce);
         player.gameObject.SetActive(true);
 
-        cam.Initialize(player, decal, speed);
+        cam.Initialize(player, gameData.CameraDecal, gameData.Player.Speed);
         cam.gameObject.SetActive(true);
 
         gameManager.Initialize(player, cam);

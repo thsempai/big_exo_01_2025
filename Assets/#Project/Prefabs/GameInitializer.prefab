@@ -44,12 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cd1f655af70b840bb6fb8ceb51cfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: efe0b1fa84cd8554ea15a8bdb312462c, type: 2}
   player: {fileID: 2841271941056814037, guid: 8401b78c059ba204089f47659c2ab4f8, type: 3}
   actions: {fileID: -944628639613478452, guid: ac3896e91c55b244097cd072d966bea5, type: 3}
-  speed: 10
-  jumpForce: 500
   cam: {fileID: 8348175916522374744, guid: f8000590af4e17644bda8ce23d22978c, type: 3}
-  decal: -3
   gameManager: {fileID: 2445456500188985808, guid: 5d7f114d8d2dcaf48b4f63de9648a2dd, type: 3}
   playground: {fileID: 3962427581677378444, guid: 6a8cb1a86a223bf4b96947bed41c5cd2, type: 3}
   obstacles: {fileID: 2344729845425008282, guid: b528b78028b6a99448682ca6cc7200cc, type: 3}
