@@ -39,7 +39,7 @@ public class GameInitializer : MonoBehaviour
         player.Initialize(actions, gameData.Player.Speed, gameData.Player.JumpForce);
         player.gameObject.SetActive(true);
 
-        cam.Initialize(player, gameData.CameraDecal, gameData.Player.Speed);
+        cam.Initialize(player, gameData.Camera.Decal, gameData.Player.Speed);
         cam.gameObject.SetActive(true);
 
         gameManager.Initialize(player, cam);

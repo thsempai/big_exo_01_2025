@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd9bdf9803d7b645b7e20ea141ce2c7, type: 3}
   m_Name: Game Classic
   m_EditorClassIdentifier: 
-  <PlayerSpeed>k__BackingField: 10
-  <PlayerJumpForce>k__BackingField: 300
+  <Player>k__BackingField: {fileID: 11400000, guid: 2381159fcf008d84683d4eed4b1f0add, type: 2}
   <CameraDecal>k__BackingField: -3
