@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (player.enabled) player.Process();
+    }
+
+    void LateUpdate()
+    {
         if (cam.enabled) cam.Process();
+        
     }
 }

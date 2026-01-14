@@ -50,5 +50,6 @@ public class GameInitializer : MonoBehaviour
     {
         CreateObject();
         Initialize();
+        Destroy(gameObject);
     }
 }
